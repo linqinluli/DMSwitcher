@@ -28,9 +28,9 @@ This paper proposes xDM, a multi-backend disaggregated memory system that can ma
 
 ### a. Requirements
 
-1）xDM rdma server：a server with at least 64G memory, a MT27800 Family [ConnectX-5] NIC(recommend), MLNX_OFED_LINUX-5.8-4.1.5.0 installed (available at [Linux InfiniBand Drivers (nvidia.com)](https://network.nvidia.com/products/infiniband-drivers/linux/mlnx_ofed/), should match the Linux distribution and rdma NIC version.), 
+1）xDM rdma server：a server with at least 64G memory(128G recommend), ubuntu 20.04.06(recommend), a MT27800 Family [ConnectX-5] NIC(recommend), MLNX_OFED_LINUX-5.8-4.1.5.0 installed (available at [Linux InfiniBand Drivers (nvidia.com)](https://network.nvidia.com/products/infiniband-drivers/linux/mlnx_ofed/), should match the Linux distribution and rdma NIC version.), 
 
-2）xDM client：a server with at least 64G memory, a MT27800 Family [ConnectX-5] NIC(recommend), MLNX_OFED_LINUX-5.8-4.1.5.0 installed (available at [Linux InfiniBand Drivers (nvidia.com)](https://network.nvidia.com/products/infiniband-drivers/linux/mlnx_ofed/), should match the Linux distribution and rdma NIC version.), require qemu-kvm installed
+2）xDM client：a server with at least 64G memory(128G recommend), ubuntu 20.04.06(recommend), a MT27800 Family [ConnectX-5] NIC(recommend), MLNX_OFED_LINUX-5.8-4.1.5.0 installed (available at [Linux InfiniBand Drivers (nvidia.com)](https://network.nvidia.com/products/infiniband-drivers/linux/mlnx_ofed/), should match the Linux distribution and rdma NIC version.), require qemu-kvm installed
 
 ### b. Install xDM in xDM client
 
@@ -42,7 +42,13 @@ Install qemu-kvm, we recommend to install virt-manager to manage VMs
 sudo apt install qemu-system qemu-utils virt-manager libvirt-clients libvirt-daemon-system -y
 ```
 
-Install VM with virt-manager. We recommand to use ubuntu 16.04. The next steps are finished in the VMs.
+Install VM with virt-manager. The next steps are finished in the VMs.
+
+Here is the recommanded configuration of VMs.
+        (1) CPU cores: 16
+        (2) CPU model: (host-model, enable AVX)
+        (3) RAM: >=64G
+        (4) storage: >=300G
 
 #### 2) Compiling and installing data swap kernel in each vm on the client node, only DRAM and RDMA kernel need this step
 

@@ -10,7 +10,7 @@ args = parser.parse_args()
 
 file_path = args.file_path
 kernel_name = "4.11.0-fastswap"
-backend = "dram"
+backend = "rdma"
 thp_state = "on"
 cpu_num = 32
 
@@ -21,7 +21,7 @@ with open(file_path, encoding='utf-8') as file_obj:
 data = []
 with open("./test.csv", "a", newline='') as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(["kernel", "backend", "thp on/off", "cpu", "workload", "workload size", "local size", "page fault", "sys time", "user time", "wall time", "GFlops", "img/sec", "RSS"])
+    writer.writerow(["kernel", "backend", "thp on/off", "cpu", "workload", "workload size", "page fault", "sys time", "user time", "wall time", "GFlops", "img/sec", "RSS"])
 
 for i in range(len(lines)):
     pf = 0
