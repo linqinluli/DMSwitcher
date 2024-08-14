@@ -45,10 +45,16 @@ sudo apt install qemu-system qemu-utils virt-manager libvirt-clients libvirt-dae
 Install VM with virt-manager. The next steps are finished in the VMs.
 
 Here is the recommanded configuration of VMs.
-        (1) CPU cores: 16
-        (2) CPU model: (host-model, enable AVX)
-        (3) RAM: >=64G
-        (4) storage: >=300G
+
+1) CPU cores: 16
+
+2) CPU model: (host-model, enable AVX)
+
+3) RAM: >=64G
+
+4) storage: >=300G
+
+
 
 #### 2) Compiling and installing data swap kernel in each vm on the client node, only DRAM and RDMA kernel need this step
 
